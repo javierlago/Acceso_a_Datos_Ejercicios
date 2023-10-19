@@ -5,4 +5,9 @@
         <nombre>Antonio</nombre>
         <apellidos>Morales</apellidos>
     </empleado>
+    <empleado>
+        <id>02</id>
+        <nombre>juan</nombre>
+        <apellidos>Perez</apellidos>
+    </empleado>
 </empleados>

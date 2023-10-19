@@ -11,6 +11,8 @@ import javax.xml.transform.dom.DOMSource;
 import javax.xml.transform.stream.StreamResult;
 import java.io.File;
 
+import static javax.xml.transform.TransformerFactory.*;
+
 
 public class CrearXML {
     public static void main(String[] args) throws ParserConfigurationException, TransformerException {
@@ -45,9 +47,29 @@ public class CrearXML {
         texto = registroEmpleados.createTextNode("Morales");
         apellidos.appendChild(texto);
         empleado.appendChild(apellidos);
+        // Creamos nodo empleado
+        empleado = registroEmpleados.createElement("empleado");
+        //Lo añadimos como hijo de empleado
+        registroEmpleados.getDocumentElement().appendChild(empleado);
+        //Creamos el nodo ID
+        id = registroEmpleados.createElement("id");
+        // Creamos el nodo texto con el valor del Id
+        texto = registroEmpleados.createTextNode("02");
+        //Añadimos el valor al nodo ID
+        id.appendChild(texto);
+        // Añadimos el nodo Id al empleado
+        empleado.appendChild(id);
+        nombre = registroEmpleados.createElement("nombre");
+        texto = registroEmpleados.createTextNode("juan");
+        nombre.appendChild(texto);
+        empleado.appendChild(nombre);
+        apellidos = registroEmpleados.createElement("apellidos");
+        texto = registroEmpleados.createTextNode("Perez");
+        apellidos.appendChild(texto);
+        empleado.appendChild(apellidos);
         Source origen = new DOMSource(registroEmpleados);
         Result resultado = new StreamResult(new File("Empleados.xml"));
-        Transformer transformador = TransformerFactory.newInstance().newTransformer();
+        Transformer transformador = newInstance().newTransformer();
         transformador.transform(origen, resultado);
         Result salidaEstandar = new StreamResult(System.out);
         transformador.transform(origen, salidaEstandar);
