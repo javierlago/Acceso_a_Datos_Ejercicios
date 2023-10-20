@@ -1,0 +1,12 @@
+<estudiantes>
+    <estudiante>
+        <id>1</id>
+        <nombre>Marina</nombre>
+        <edad>20</edad>
+    </estudiante>
+    <estudiante>
+        <id>2</id>
+        <nombre>David</nombre>
+        <edad>22</edad>
+    </estudiante>
+</estudiantes>
