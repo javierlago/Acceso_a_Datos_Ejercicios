@@ -10,34 +10,43 @@ import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.transform.TransformerException;
 import java.io.File;
 import java.io.IOException;
+import java.text.DecimalFormat;
 
-public class Main {
+public class PromedioPrecio {
+
     public static void main(String[] args) throws ParserConfigurationException, IOException, TransformerException, SAXException {
-        leerXml(new File("\\Ejercicio_Accesso_A_Datos\\Libros.xml"));
+        System.out.println("El precio medio es " + String.format("%.2f",leerXml2(new File("\\Ejercicio_Accesso_A_Datos\\Libros2.xml")) ) );
+
+
+
+
     }
+    public  static double leerXml2(File archivoXml) throws ParserConfigurationException, IOException, SAXException, TransformerException {
 
-
-    public static void leerXml(File archivoXml) throws ParserConfigurationException, IOException, SAXException, TransformerException {
         DocumentBuilderFactory dbf = DocumentBuilderFactory.newDefaultInstance();
         DocumentBuilder builder = dbf.newDocumentBuilder();
         Document xml = builder.parse(archivoXml);
         xml.getDocumentElement().normalize();
         NodeList listado = xml.getElementsByTagName("libro");
+        int numeroDeLibros = 0;
+        double precioAcumulado= 0;
         // Recorremos la lista
         for(int i = 0;i<listado.getLength();i++){
             Node nodo = listado.item(i);
             if(nodo.getNodeType()==Node.ELEMENT_NODE){
                 Element libro = (Element)nodo;
-                System.out.print("Titulo del el libro " + libro.getElementsByTagName("titulo").item(0).getTextContent());
-                System.out.print(" escrito por " + libro.getElementsByTagName("autor").item(0).getTextContent());
-                System.out.println(" en el año " + libro.getElementsByTagName("anio").item(0).getTextContent());
+                precioAcumulado += Double.parseDouble(libro.getElementsByTagName("precio").item(0).getTextContent());
+                numeroDeLibros += 1;
+
             }
 
 
         }
 
-
+    return  (precioAcumulado/numeroDeLibros) ;
     }
+
+
 
 
 }
