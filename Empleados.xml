@@ -1,28 +1,55 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <empleados>
-    <empleado>
-        <id>01</id>
-        <nombre>Antonio</nombre>
-        <apellidos>Morales</apellidos>
-    </empleado>
-    <empleado>
-        <id>02</id>
-        <nombre>juan</nombre>
-        <apellidos>Perez</apellidos>
-    </empleado>
-    <empleado>
-        <id>03</id>
-        <nombre>Jose</nombre>
-        <apellidos>Perez</apellidos>
-    </empleado>
-    <empleado>
-        <id>04</id>
-        <nombre>Brais</nombre>
-        <apellidos>Dominguez</apellidos>
-    </empleado>
-    <empleado>
-        <id>04</id>
-        <nombre>Brais</nombre>
-        <apellidos>Dominguez</apellidos>
-    </empleado>
+      
+  <empleado>
+            
+    <id>01</id>
+            
+    <nombre>Antonio</nombre>
+            
+    <apellidos>Morales</apellidos>
+        
+  </empleado>
+      
+  <empleado>
+            
+    <id>02</id>
+            
+    <nombre>juan</nombre>
+            
+    <apellidos>Perez</apellidos>
+        
+  </empleado>
+      
+  <empleado>
+            
+    <id>03</id>
+            
+    <nombre>Jose</nombre>
+            
+    <apellidos>Perez</apellidos>
+        
+  </empleado>
+      
+  <empleado>
+            
+    <id>04</id>
+            
+    <nombre>Brais</nombre>
+            
+    <apellidos>Dominguez</apellidos>
+        
+  </empleado>
+      
+  <empleado>
+            
+    <id>04</id>
+            
+    <nombre>Brais</nombre>
+            
+    <apellidos>Dominguez</apellidos>
+        
+  </empleado>
+  
+
 </empleados>

@@ -6,6 +6,7 @@ import org.xml.sax.SAXException;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
+import javax.xml.transform.OutputKeys;
 import javax.xml.transform.Transformer;
 import javax.xml.transform.TransformerException;
 import javax.xml.transform.TransformerFactory;
@@ -18,7 +19,7 @@ public class AnadirEstudiante {
 
     public static void main(String[] args) throws ParserConfigurationException, IOException, TransformerException, SAXException {
 
-        anadirXml(new File("\\Ejercicio_Accesso_A_Datos\\estudiantes.xml"),"05","Manuel","Dominguez");
+        anadirXml(new File("\\Ejercicio_Accesso_A_Datos\\estudiantes.xml"),"8","pepe","Dominguez");
 
     }
 
@@ -52,6 +53,9 @@ public class AnadirEstudiante {
         // Guardar el documento modificado en el archivo
         TransformerFactory tf = TransformerFactory.newInstance();
         Transformer transformer = tf.newTransformer();
+        // Configurar el formateo del documento con saltos de línea y sangría
+         transformer.setOutputProperty(OutputKeys.INDENT, "yes");
+         transformer.setOutputProperty("{http://xml.apache.org/xslt}indent-amount", "10");
         DOMSource source = new DOMSource(refistroEstudiantes);
         StreamResult result = new StreamResult(archivoXml);
         transformer.transform(source, result);

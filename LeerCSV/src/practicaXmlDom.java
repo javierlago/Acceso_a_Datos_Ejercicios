@@ -53,6 +53,9 @@ public class practicaXmlDom {
         // Guardar el documento modificado en el archivo
         TransformerFactory tf = TransformerFactory.newInstance();
         Transformer transformer = tf.newTransformer();
+        // Configurar el formateo del documento con saltos de línea y sangría
+        transformer.setOutputProperty(OutputKeys.INDENT, "yes");
+        transformer.setOutputProperty("{http://xml.apache.org/xslt}indent-amount", "2");
         DOMSource source = new DOMSource(registroEmpleados);
         StreamResult result = new StreamResult(archivoXml);
         transformer.transform(source, result);
